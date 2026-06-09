@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import AuthRoutes from "./routes/AuthRoutes.js";
+import TaskRoutes from "./routes/TaskRoutes.js";
 import sequelize from "../config/database.js";
 dotenv.config();
 const app = express();
@@ -14,6 +15,7 @@ app.use((req, res, next) => {
     return next();
 });
 app.use("/api/auth",AuthRoutes);
+app.use("/api/task",TaskRoutes);
 
 app.use((err, req, res, next) => {
     if (typeof err === "string") {

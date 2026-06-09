@@ -49,6 +49,9 @@ const TaskModel = sequelize.define(
     user_id: {
       type: DataTypes.INTEGER,
     },
+    color:{
+      type: DataTypes.STRING,
+    }
   },
   {
     tableName: "tasks_001",

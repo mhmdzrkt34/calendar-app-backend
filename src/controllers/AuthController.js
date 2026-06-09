@@ -1,4 +1,4 @@
-import { LoginService, SendOtpService } from "../services/authService.js";
+import { LoginService, SendOtpService } from "../services/AuthService.js";
 
 export const Login = async (req, res, next) => {
     try {

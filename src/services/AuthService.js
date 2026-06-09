@@ -11,7 +11,7 @@ export const LoginService = async (req, res, next) => {
   if (!user) {
     user = await createUser({ email, transaction });
   }
-  await updateOtp({id: req.context.otpRecord.id, is_used: 1, transaction});
+  await updateOtp({ id: req.context.otpRecord.id, is_used: 1, transaction });
   await transaction.commit();
   let token = generateJwtToken(user);
   let response = {
