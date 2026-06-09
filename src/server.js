@@ -47,6 +47,7 @@ const startServer = async () => {
         });
     } catch (error) {
         console.error("Unable to connect to MySQL:", error.message);
+        await new Promise(resolve => setTimeout(resolve, 5000));
     }
 };
 startServer();
